@@ -44,11 +44,10 @@
         </div>
     </div>
     <div class="gifs container">
-        <div class="row">
-           <h1>Miejsce na wyświetlenie gifów:)</h1>
-            <h2>Zmiana</h2>
-            <div><img th:src="${gif.getThymeleafFilePath()}"/></div>
-
+        <div th:each="gif : ${gifs}">
+            <div class="row col s12">
+                <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" alt="gif" />
+            </div>
         </div>
     </div>
 
