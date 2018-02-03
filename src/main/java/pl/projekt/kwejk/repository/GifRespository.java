@@ -25,7 +25,7 @@ public class GifRespository {
         return ALL_GIFS;
     }
 
-    public static List<Gif> findFavorites() {
+    public  List<Gif> findFavorites() {
         return ALL_GIFS.stream().filter(p -> p.isFavorite()).collect(Collectors.toList());
     }
 }
