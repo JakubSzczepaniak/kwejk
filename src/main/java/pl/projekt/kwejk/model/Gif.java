@@ -39,5 +39,8 @@ public class Gif {
         this.name = name;
     }
 
-
+    public Gif(String name, boolean favorite) {
+        this.name = name;
+        this.favorite = favorite;
+    }
 }
