@@ -25,7 +25,7 @@ public class HomeController {
         modelMap.addAttribute("gifs",gifRespository.findFavorites());
         return "favorites";
     }
-    @GetMapping("/gif/(name)")
+    @GetMapping("/gif/{name}")
     public String displayGif(@PathVariable String name, ModelMap modelMap){
         modelMap.addAttribute( "gif",gifRespository.findBayName(name).orElse(new Gif("android-explosion", true)));
     return "gif-details";
