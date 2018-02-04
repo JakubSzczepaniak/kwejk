@@ -5,6 +5,7 @@ import pl.projekt.kwejk.model.Gif;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class GifRespository {
@@ -27,5 +28,9 @@ public class GifRespository {
 
     public  List<Gif> findFavorites() {
         return ALL_GIFS.stream().filter(p -> p.isFavorite()).collect(Collectors.toList());
+    }
+
+    public Optional<Gif> findBayName(String name){
+        return ALL_GIFS.stream().filter(p-> p.getName().equals(name)).findFirst();
     }
 }
